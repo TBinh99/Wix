@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp6F06AD3CAC82DAAD172821C7B77D2ADE" Guid="{E6F50DBC-580C-4BCB-B485-4E26A99B293C}">
+                <File Id="filD4842A06E2A3E0050F232FBD4739C0A0" KeyPath="yes" Source="$(var.SourceDir)\WpfApp1.exe" />
+            </Component>
+            <Component Id="cmp9B9F6A8829295C839AD14B5470EA70D5" Guid="{9CEBACBA-26D7-410C-A887-50788BAB06E6}">
+                <File Id="filDA2CFB46FACEE12B3C16941B1443D05B" KeyPath="yes" Source="$(var.SourceDir)\WpfApp1.exe.config" />
+            </Component>
+            <Component Id="cmp9B9F803EDECFAAF677D9F337F2234FBD" Guid="{1F4FAE33-85B6-4A76-A868-7FC104F3030F}">
+                <File Id="filA24265A2657F140115DABCB1107152D2" KeyPath="yes" Source="$(var.SourceDir)\WpfApp1.pdb" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MyComponentGroup">
+            <ComponentRef Id="cmp6F06AD3CAC82DAAD172821C7B77D2ADE" />
+            <ComponentRef Id="cmp9B9F6A8829295C839AD14B5470EA70D5" />
+            <ComponentRef Id="cmp9B9F803EDECFAAF677D9F337F2234FBD" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

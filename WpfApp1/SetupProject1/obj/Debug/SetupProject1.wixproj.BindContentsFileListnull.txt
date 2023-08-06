@@ -1,0 +1,3 @@
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\\WpfApp1.pdb
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\\WpfApp1.exe
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\\WpfApp1.exe.config

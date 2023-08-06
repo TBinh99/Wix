@@ -1,0 +1,16 @@
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+D:\Binh's Folder\Wix\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb

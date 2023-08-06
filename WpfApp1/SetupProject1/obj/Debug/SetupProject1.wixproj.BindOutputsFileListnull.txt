@@ -1,0 +1,3 @@
+D:\Binh's Folder\Wix\WpfApp1\SetupProject1\bin\Debug\cab1.cab
+D:\Binh's Folder\Wix\WpfApp1\SetupProject1\bin\Debug\SetupProject1.msi
+D:\Binh's Folder\Wix\WpfApp1\SetupProject1\bin\Debug\SetupProject1.wixpdb

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define WpfApp1_TargetDir=$(var.WpfApp1.TargetDir)?>
+
+	<Product Id="*" Name="SetupProject1" Language="1033" Version="1.0.0.0" Manufacturer="TWolf" UpgradeCode="76927950-7208-48b0-9fec-ffa4af44b9d1">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<!--<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		
+		<UI>
+			--><!-- Reference the custom UI --><!--
+			--><!-- Include WixUIExtension --><!--
+			<UIRef Id="WixUI_Common" />
+			<UIRef Id="CustomDialog" />
+		</UI>-->
+		<Feature Id="MainFeature" Title="Main Feature" Level="1">
+			<ComponentGroupRef Id="MyComponentGroup" />
+		</Feature>
+		<!--<Feature Id="SecondFeature" Title="Second Feature" Level="1">
+			--><!-- Include the ComponentGroupRef to reference the MyComponentGroup --><!--
+			<ComponentGroupRef Id="MyFolder" />
+		</Feature>-->
+		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupProject1" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<!--<Component Id="WpfApp1.exe" Guid="8DE11A84-F87C-4C8E-BE86-47B6513BFE98">
+				<File Id="WpfApp1.exe" Source="$(var.WpfApp1_TargetDir)WpfApp1.exe" />
+			</Component>
+			<Component Id="WpfApp1.exe.config" Guid="ca8cf100-7c2b-484c-9d4c-30244ee64c11">
+			  <File Id="WpfApp1.exe.config" Name="WpfApp1.exe.config" Source="$(var.WpfApp1_TargetDir)WpfApp1.exe.config" />
+			</Component>-->
+		</ComponentGroup>
+		<!--<ComponentGroup Id="MyComponentGroup" Directory="INSTALLFOLDER" Source="MyComponentGroup.wxs">
+			--><!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. --><!--
+			--><!-- <Component Id="ProductComponent"> --><!--
+			--><!-- TODO: Insert files, registry keys, and other resources here. --><!--
+			--><!-- </Component> --><!--
+		</ComponentGroup>-->
+
+		<!--<ComponentGroup Id="MyComponentGroup" Directory="INSTALLFOLDER">
+			--><!-- Your harvested components should be listed here --><!--
+		</ComponentGroup>-->
+	</Fragment>
+	
+</Wix>

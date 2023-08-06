@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<!--<ComponentGroup Id="MyFolder" Directory="INSTALLFOLDER">
+			<Component Id="cmp6F06AD3CAC82DAAD172821C7B77D2ADE" Guid="{4456AAD5-F65F-4E0D-A463-7F9A0DCDBF5C}">
+				<File Id="filD4842A06E2A3E0050F232FBD4739C0A0" KeyPath="yes" Source="D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe" />
+			</Component>
+			<Component Id="cmp9B9F6A8829295C839AD14B5470EA70D5" Guid="{6D0256C5-DF39-41FB-9709-EC932B83417D}">
+				<File Id="filDA2CFB46FACEE12B3C16941B1443D05B" KeyPath="yes" Source="D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config" />
+			</Component>
+			<Component Id="cmp9B9F803EDECFAAF677D9F337F2234FBD" Guid="{B35480FC-9A02-418E-8EC4-221BEB5A091C}">
+				<File Id="filA24265A2657F140115DABCB1107152D2" KeyPath="yes" Source="D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb" />
+			</Component>
+		</ComponentGroup>-->
+	</Fragment>
+</Wix>
