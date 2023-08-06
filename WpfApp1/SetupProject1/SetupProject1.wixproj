@@ -59,7 +59,4 @@
 	<Target Name="AfterBuild">
 	</Target>
 	-->
-  <Target Name="HeatDirectory" BeforeTargets="Build">
-    <Exec Command="&quot;C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe&quot; dir &quot;D:\Binh's Folder\Wix\WpfApp1\WpfApp1\bin\Debug&quot; -dr INSTALLFOLDER -srd -cg MyComponentGroup -dr INSTALLFOLDER -gg -sfrag -var var.WpfApp1.TargetDir -out MyComponentGroup.wxs" />
-  </Target>
 </Project>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<?define WpfApp1_TargetDir=$(var.WpfApp1.TargetDir)?>
+	<?define ProductName="My Product Name" ?>
 
-	<Product Id="*" Name="SetupProject1" Language="1033" Version="1.0.0.0" Manufacturer="TWolf" UpgradeCode="76927950-7208-48b0-9fec-ffa4af44b9d1">
+	<Product Id="*" Name="$(var.ProductName)" Language="1033" Version="1.0.0.0" Manufacturer="TWolf" UpgradeCode="76927950-7208-48b0-9fec-ffa4af44b9d1">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -23,7 +23,7 @@
 			--><!-- Include the ComponentGroupRef to reference the MyComponentGroup --><!--
 			<ComponentGroupRef Id="MyFolder" />
 		</Feature>-->
-		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+		<Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 	</Product>
@@ -31,7 +31,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="SetupProject1" />
+				<Directory Id="INSTALLFOLDER" Name="$(var.ProductName)" />
 			</Directory>
 		</Directory>
 	</Fragment>
