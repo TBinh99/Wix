@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="b5597c69-bef5-4d09-a356-deb69a45d90f" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="b5597c69-bef5-4d09-a356-deb68a45d90e" Manufacturer="phant">
+    <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
+    <Media Id="1" Cabinet="Project.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="INSTALLDIR" Name="ProgramFilesFolder">
+
+        <Component Id="Component.INSTALLDIR.EmptyDirectory" Guid="b5597c69-bef5-4d09-a356-deb6ac88c8f0" KeyPath="yes">
+          <CreateFolder />
+          <RemoveFolder Id="INSTALLDIR" On="uninstall" />
+        </Component>
+
+      </Directory>
+
+      <Component Id="TARGETDIR" Guid="b5597c69-bef5-4d09-a356-deb6fd154981" KeyPath="yes">
+        <CreateFolder />
+        <RemoveFolder Id="TARGETDIR" On="uninstall" />
+      </Component>
+
+    </Directory>
+
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
+      <ComponentRef Id="Component.INSTALLDIR.EmptyDirectory" />
+      <ComponentRef Id="TARGETDIR" />
+    </Feature>
+
+  </Product>
+</Wix>
+

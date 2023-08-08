@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="a0b972d9-c222-490b-9478-a9bd7a7c0ce8" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="a0b972d9-c222-490b-9478-a9bd6a7c0ce7" Manufacturer="phant">
+    <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
+    <Media Id="1" Cabinet="Project.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="INSTALLDIR" Name="ProgramFilesFolder">
+
+        <Component Id="Component.WpfApp1.exe_3332769993" Guid="a0b972d9-c222-490b-9478-a9bda599962f">
+          <File Id="WpfApp1.exe_3332769993" Source="..\..\..\WpfApp1\bin\Debug\WpfApp1.exe" />
+        </Component>
+
+        <Component Id="Component.WpfApp1.exe.config_3340810877" Guid="a0b972d9-c222-490b-9478-a9bdeab57165">
+          <File Id="WpfApp1.exe.config_3340810877" Source="..\..\..\WpfApp1\bin\Debug\WpfApp1.exe.config" />
+        </Component>
+
+        <Component Id="Component.WpfApp1.pdb_2994735285" Guid="a0b972d9-c222-490b-9478-a9bd9a1605ed">
+          <File Id="WpfApp1.pdb_2994735285" Source="..\..\..\WpfApp1\bin\Debug\WpfApp1.pdb" />
+        </Component>
+
+      </Directory>
+    </Directory>
+
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
+      <ComponentRef Id="Component.WpfApp1.exe_3332769993" />
+      <ComponentRef Id="Component.WpfApp1.exe.config_3340810877" />
+      <ComponentRef Id="Component.WpfApp1.pdb_2994735285" />
+    </Feature>
+
+  </Product>
+</Wix>
+

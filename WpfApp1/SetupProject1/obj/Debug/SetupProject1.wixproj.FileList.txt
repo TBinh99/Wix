@@ -8,3 +8,6 @@ obj\Debug\CustomDialog.wixobj
 obj\Debug\MyFolder.wixobj
 obj\Debug\MyComponentGroup.wixobj
 D:\Binh's Folder\Wix\WpfApp1\SetupProject1\bin\Debug\cab1.cab
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\SetupProject1\bin\Debug\cab1.cab
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\SetupProject1\bin\Debug\SetupProject1.msi
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\SetupProject1\bin\Debug\SetupProject1.wixpdb

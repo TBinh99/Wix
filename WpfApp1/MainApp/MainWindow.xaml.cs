@@ -15,8 +15,17 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using EnvDTE;
 using EnvDTE80;
+using WixSharp;
+using System.IO;
 using Window = System.Windows.Window;
 using Process = System.Diagnostics.Process;
+using Project = EnvDTE.Project;
+using Microsoft.Win32;
+using System.Windows.Forms;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using Button = System.Windows.Controls.Button;
+using File = WixSharp.File;
+using System.Collections.ObjectModel;
 
 namespace MainApp
 {
@@ -25,86 +34,35 @@ namespace MainApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<string> listBoxItems = new ObservableCollection<string>();
         public MainWindow()
         {
             InitializeComponent();
-            List<string> list = new List<string>();
-            DTE2 dte = (DTE2)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE");
-            string currentProjectName = GetActiveProjectName(dte);
-            if (dte != null && dte.Solution != null)
-            {
-                Solution solution = dte.Solution;
-                foreach (Project project in solution.Projects)
-                {
-                    if (project.Name != "Miscellaneous Files" && project.Name != "SetupProject1")
-                    {
-                        list.Add(project.Name);
-                    }
-                }
-            }
-            list.Remove(currentProjectName);
-            projectListBox.Items.Clear();
-            projectListBox.ItemsSource = list;
-  
+            //List<string> list = new List<string>();
+            //DTE2 dte = (DTE2)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE");
+            //string currentProjectName = GetActiveProjectName(dte);
+            //if (dte != null && dte.Solution != null)
+            //{
+            //    Solution solution = dte.Solution;
+            //    foreach (Project project in solution.Projects)
+            //    {
+            //        if (project.Name != "Miscellaneous Files" && project.Name != "SetupProject1")
+            //        {
+            //            list.Add(project.Name);
+            //        }
+            //    }
+            //}
+            //list.Remove(currentProjectName);
+            //projectListBox.Items.Clear();
+            //projectListBox.ItemsSource = list;
+            projectListBox.ItemsSource = listBoxItems;
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string command = @"C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe";
-
             if (sender is Button button && button.DataContext is string itemName)
             {
-                string arguments = $@"dir ""D:\Binh's Folder\Wix\WpfApp1\{itemName}\bin\Debug"" -dr INSTALLFOLDER -srd -cg MyComponentGroup -dr INSTALLFOLDER -gg -sfrag -var var.{itemName}.TargetDir -out ""D:\Binh's Folder\Wix\WpfApp1\SetupProject1\MyComponentGroup.wxs""";
-                Process process = new Process();
-                process.StartInfo.FileName = command;
-                process.StartInfo.Arguments = arguments;
-                process.Start();
-                process.WaitForExit();
-
-            // Path to the WiX toolset installation directory
-            string wixToolsPath = @"C:\Program Files (x86)\WiX Toolset v3.11\bin\";
-
-            // Path to the WiX source files (e.g., Product.wxs)
-            string wixSourcePath = @"D:\Binh's Folder\Wix\WpfApp1\SetupProject1\";
-
-            // Path to the output directory for the MSI file
-            string outputDirectory = @"D:\Binh's Folder\Wix\WpfApp1\SetupProject1\bin\Debug\";
-
-            // Build the WiX project using candle.exe and light.exe
-            ProcessStartInfo candleStartInfo = new ProcessStartInfo
-            {
-                FileName = wixToolsPath + "candle.exe",
-                Arguments = "\"" + wixSourcePath + "Product.wxs\" -dProductName=\"" + itemName + "\" -out \"" + outputDirectory + "Product.wixobj\"",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            Process.Start(candleStartInfo).WaitForExit();
-
-            ProcessStartInfo lightStartInfo = new ProcessStartInfo
-            {
-                FileName = wixToolsPath + "light.exe",
-                Arguments = "\"" + outputDirectory + "Product.wixobj\" -dProductName=\"" + itemName + "\" -out \"" + outputDirectory +"SetupProject1.msi\"",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            Process.Start(lightStartInfo).WaitForExit();
-
-            // Install the MSI using msiexec.exe
-            ProcessStartInfo msiexecStartInfo = new ProcessStartInfo
-            {
-                FileName = "msiexec.exe",
-                Arguments = "/i \"" + outputDirectory + "SetupProject1.msi\"",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            Process.Start(msiexecStartInfo).WaitForExit();
-
-            Console.WriteLine("Installation completed.");
+                listBoxItems.Remove(itemName);
             }
         }
 
@@ -116,6 +74,65 @@ namespace MainApp
                 return activeProject.Name;
             }
             return null;
+        }
+        static void RunMsi(string msiPath)
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "msiexec.exe";
+                process.StartInfo.Arguments = "/i \"" + msiPath + "\""; // /i for installation
+                process.Start();
+                process.WaitForExit();
+
+                if (process.ExitCode == 0)
+                {
+                    Console.WriteLine("Installation successful.");
+                }
+                else
+                {
+                    Console.WriteLine("Installation failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private void GetFiles(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true; // Allow multiple file selection
+
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string[] selectedFilePaths = openFileDialog.FileNames;
+                //projectListBox.Items.Clear();
+                //projectListBox.ItemsSource = selectedFilePaths;
+
+                foreach (string filePath in selectedFilePaths)
+                {
+                    listBoxItems.Add(filePath);
+                }
+
+            }
+        }
+
+        private void Install(object sender, RoutedEventArgs e)
+        {
+            string itemName = AppName.Text;
+            List<File> listBoxFiles = new List<File>();
+            foreach (string path in listBoxItems) {
+                listBoxFiles.Add(new File(path));
+            }
+            var project = new WixSharp.Project(itemName,
+                      new Dir($@"%ProgramFiles%\{itemName}",
+                      listBoxFiles.ToArray()));
+                //project.GUID = new Guid("6f330b47-2577-43ad-9095-1861ba25889b");
+                Compiler.BuildMsi(project);
+                //RunMsi(System.IO.Path.Combine(project.OutDir, project.Name));
         }
     }
 }

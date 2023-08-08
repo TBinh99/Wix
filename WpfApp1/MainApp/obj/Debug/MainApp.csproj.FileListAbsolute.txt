@@ -14,3 +14,30 @@ D:\Binh's Folder\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.GenerateResource.c
 D:\Binh's Folder\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.CoreCompileInputs.cache
 D:\Binh's Folder\Wix\WpfApp1\MainApp\obj\Debug\MainApp.exe
 D:\Binh's Folder\Wix\WpfApp1\MainApp\obj\Debug\MainApp.pdb
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\MainApp.exe.config
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\MainApp.exe
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\MainApp.pdb
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.SuggestedBindingRedirects.cache
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainWindow.g.cs
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\App.g.cs
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp_MarkupCompile.cache
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp_MarkupCompile.lref
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainWindow.baml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.g.resources
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.Properties.Resources.resources
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.GenerateResource.cache
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.CoreCompileInputs.cache
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.exe
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.pdb
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\BootstrapperCore.dll
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\Microsoft.Deployment.WindowsInstaller.dll
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.dll
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.Msi.dll
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.UI.dll
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\BootstrapperCore.xml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\Microsoft.Deployment.WindowsInstaller.xml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.xml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.Msi.xml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\bin\Debug\WixSharp.UI.xml
+D:\PTB\JOB\Fromgithub\Wix\WpfApp1\MainApp\obj\Debug\MainApp.csproj.CopyComplete
